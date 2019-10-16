@@ -1,0 +1,6 @@
+%h1 Homepage#index
+%p Find me in app/views/homepage/index.html.haml
+- if user_signed_in?
+  = current_user.email
+- else
+  %p Non connecté
