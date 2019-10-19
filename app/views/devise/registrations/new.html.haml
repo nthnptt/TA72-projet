@@ -16,6 +16,18 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
+  .field
+    = f.label :username
+    %br/
+    = f.text_field :username
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :city_code
+    = f.text_field :city_code
+    = f.label :city
+    = f.text_field :city
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"

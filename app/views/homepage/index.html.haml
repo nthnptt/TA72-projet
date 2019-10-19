@@ -2,5 +2,9 @@
 %p Find me in app/views/homepage/index.html.haml
 - if user_signed_in?
   = current_user.email
+  %br
+  = current_user.username
+  %div
+    =link_to 'edit', '/users/edit', class: "btn btn-outline-success my-2 my-sm-0"
 - else
   %p Non connecté
