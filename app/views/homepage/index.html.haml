@@ -4,6 +4,7 @@
   = current_user.email
   %br
   = current_user.username
+  = image_tag(url_for(current_user.avatar))
   %div
     =link_to 'edit', '/users/edit', class: "btn btn-outline-success my-2 my-sm-0"
 - else
