@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one_attached :avatar
+  has_many :offers
+
   validates_length_of :phone_number, :is => 10
   validates_presence_of :username, :phone_number, :city, :city_code
   before_validation :set_default_img

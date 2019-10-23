@@ -1,0 +1,18 @@
+- if current_user == @offer.user
+  = link_to 'Edit', edit_offer_path(@offer)
+  = link_to 'Remove', @offer, method: :delete
+%table.table
+  %thead
+    %tr
+      %th{ scope: :col } Title
+      %th{ scope: :col } Description
+      %th{ scope: :col } Price
+  %tbody
+    %tr
+      %td
+        =@offer.title
+        - if current_user == @offer.user
+          = "*"
+      %td= @offer.description
+      %td= @offer.price
+
