@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 2019_10_19_070152) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "city", default: ""
-    t.string "address", default: ""
-    t.decimal "city_code", default: "0.0"
-    t.string "username", default: ""
+    t.string "city"
+    t.string "address"
+    t.decimal "city_code"
+    t.string "username"
     t.string "phone_number"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
