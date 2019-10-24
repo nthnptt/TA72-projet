@@ -16,3 +16,6 @@
       %td= @offer.description
       %td= @offer.price
 
+- @offer.images.each do |i|
+  = image_tag i
+

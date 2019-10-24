@@ -32,15 +32,15 @@ class OffersController < ApplicationController
   end
 
   def update
-    @article = Offer.find params[:id]
-    if @article.update offers_params
-      redirect_to @article
+    @offer = Offer.find params[:id]
+    if @offer.update offers_params
+      redirect_to @offer
     else
       render 'edit'
     end
   end
 
   def offers_params
-    params.require(:offer).permit(:title, :description, :price)
+    params.require(:offer).permit(:title, :description, :price, images: [])
   end
 end

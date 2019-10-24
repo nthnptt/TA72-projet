@@ -14,4 +14,7 @@
     %br
     = f.number_field :price, step: 0.01
   %p
+    = f.file_field :images, multiple: true
+
+  %p
     = f.submit
