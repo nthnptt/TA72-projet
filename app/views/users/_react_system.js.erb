@@ -1,0 +1,19 @@
+function refresh_counter($like_counter, $dislike_counter) {
+  $like_counter.text("<%=@count_like %>")
+  $dislike_counter.text('<%=@count_dislike %>')
+}
+like_btn = $('#like_btn')
+dislike_btn = $('#dislike_btn')
+like_counter = $('#like_counter')
+dislike_counter = $('#dislike_counter')
+
+<% if current_user.liked? @user%>
+  like_btn.addClass('feedback-green')
+  dislike_btn.removeClass('feedback-red')
+  refresh_counter(like_counter, dislike_counter)
+<% end %>
+<% if current_user.disliked? @user%>
+  like_btn.removeClass('feedback-green')
+  dislike_btn.addClass('feedback-red')
+  refresh_counter(like_counter, dislike_counter)
+<% end %>

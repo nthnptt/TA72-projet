@@ -1,6 +1,9 @@
 - if current_user == @offer.user
   = link_to 'Edit', edit_offer_path(@offer)
   = link_to 'Remove', @offer, method: :delete
+
+= link_to 'Profile', @offer.user
+
 %table.table
   %thead
     %tr
