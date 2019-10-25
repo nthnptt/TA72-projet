@@ -1,3 +1,6 @@
+- if @user == current_user
+  =link_to 'edit', '/users/edit', class: "btn btn-outline-success my-2 my-sm-0"
+
 %h1
   = @user.username
 

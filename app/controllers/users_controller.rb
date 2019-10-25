@@ -24,6 +24,10 @@ class UsersController < ApplicationController
     inject_count
   end
 
+  def offers
+    @user = User.find params[:id]
+  end
+
   private
   def inject_count
     @count_like = @user.get_likes.count
