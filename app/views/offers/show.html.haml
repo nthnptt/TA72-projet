@@ -4,6 +4,9 @@
 
 = link_to 'Profile', @offer.user
 
+= link_to 'Propose', offer_proposition_index_url(@offer), method: :post
+= link_to 'Propositions', offer_proposition_index_url(@offer)
+
 %table.table
   %thead
     %tr

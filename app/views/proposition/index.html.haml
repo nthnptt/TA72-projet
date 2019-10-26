@@ -1,0 +1,5 @@
+- @propositions.each do |proposition|
+  %div
+    ="Prosition by #{proposition.user.username}"
+    = link_to 'Show', offer_proposition_path(proposition.offer, proposition)
+
