@@ -44,13 +44,13 @@ ActiveRecord::Schema.define(version: 2019_10_25_131925) do
     t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
-  create_table "proposition", force: :cascade do |t|
+  create_table "propositions", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "offer_id"
     t.boolean "user_validation"
     t.boolean "owner_validation"
-    t.index ["offer_id"], name: "index_proposition_on_offer_id"
-    t.index ["user_id"], name: "index_proposition_on_user_id"
+    t.index ["offer_id"], name: "index_propositions_on_offer_id"
+    t.index ["user_id"], name: "index_propositions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

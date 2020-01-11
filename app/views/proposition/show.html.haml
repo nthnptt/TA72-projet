@@ -5,3 +5,9 @@
   ="validate by owner : #{@proposition.owner_validation}"
 %p
   ="validate by user : #{@proposition.user_validation}"
+
+%script
+  let sub = subscribe(
+  = @proposition.id
+  );
+  hi()
