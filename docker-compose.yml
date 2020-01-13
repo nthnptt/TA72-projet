@@ -1,0 +1,7 @@
+version: '3.4'
+services:
+  postgres:
+    image: postgres:10.0
+    container_name: ta72_bdd
+    ports:
+      - "5432:5432"

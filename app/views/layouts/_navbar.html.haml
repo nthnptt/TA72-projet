@@ -7,12 +7,17 @@
       %li.nav-item.active
         %a.nav-link{href: "/offers"}
           Offres
-          //%span.sr-only (current)
-    %div.my-2.my-lg-0
+      %li.nav-item
+        %a.nav-link{href: "/offers"}
+          Mes offres
+    %div.my-4.my-lg-0.inline-flex
       - if user_signed_in?
-        = link_to 'MyOrder', offers_user_path(current_user), class: "btn btn-outline-success my-2 my-sm-0"
-        = link_to 'MyProfil', current_user, class: "btn btn-outline-success my-2 my-sm-0"
-        = link_to 'Logout', '/users/sign_out', method: :delete, class: "btn btn-outline-danger my-2 my-sm-0"
+        .connexion-info
+          = "Welcome " + current_user.username
+        = link_to current_user do
+          %i.fas.fa-user
+        = link_to '/users/sign_out', method: :delete do
+          %i.fas.fa-sign-out-alt
       - else
         = link_to 'Login', '/users/sign_in', class: "btn btn-outline-success my-2 my-sm-0"
         = link_to 'Register', '/users/sign_up', class: "btn btn-outline-success my-2 my-sm-0"
