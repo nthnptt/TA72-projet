@@ -5,12 +5,16 @@
 @import "bootstrap";
 @import "feedback";
 @import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "font";
 @import "navbar";
+@import "forms";
 
 .bold {
   font-weight: bold;
 }
-
+.bolder {
+  font-weight: bolder;
+}
 .inline-flex {
   display: flex;
   >* {
@@ -26,4 +30,16 @@
   color: #FFFFFF;
   background: #571845;
   text-decoration: none;
+}
+body {
+  padding-top: 56px;
+  min-height: 100vh;
+}
+
+.bottom-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
 }

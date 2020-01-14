@@ -1,17 +1,18 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
+.container.center-form-container
+  %h1.form-title Log in
+  = form_for resource, as: resource_name, url: session_path(resource_name), html: {class: "myform"}  do |f|
     .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: :mail
+    .field
+      = f.password_field :password, autocomplete: "current-password", placeholder: "Password (6 characters min.)"
+    - if devise_mapping.rememberable?
+      .field
+        %p
+          = f.check_box :remember_me
+          = f.label :remember_me
+    .actions
+      = f.submit "Log in"
+  .links-form
+    = render "devise/shared/links"
+
+<svg xmlns="http://www.w3.org/2000/svg" class="bottom-bg" viewBox="0 0 1440 320"><path fill="#C70039" fill-opacity="1" d="M0,288L48,261.3C96,235,192,181,288,186.7C384,192,480,256,576,245.3C672,235,768,149,864,96C960,43,1056,21,1152,42.7C1248,64,1344,128,1392,160L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
