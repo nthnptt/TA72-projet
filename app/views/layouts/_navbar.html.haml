@@ -1,23 +1,28 @@
-%nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  %a.navbar-brand{:href => "/"} Navbar
-  %button.navbar-toggler{ aria: { controls: 'navbarSupportedContent', expanded: :false, label: "Toggle navigation" }, data: {target: "#navbarSupportedContent", toggle: :collapse}, type: :button}
-    %span.navbar-toggler-icon
+%nav.navbar.navbar-expand-lg.mynavbar
+  - if not user_signed_in?
+    %a.navbar-brand
+      The Great Corner !
   #navbarSupportedContent.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
-      %li.nav-item.active
-        %a.nav-link{href: "/offers"}
-          Offres
-      %li.nav-item
-        %a.nav-link{href: "/offers"}
-          Mes offres
+      - if user_signed_in?
+        %li.nav-item.active
+          %a.nav-link{href: "/offers"}
+            Offers
+        %li.nav-item
+          =link_to "My offers", offers_user_url(current_user.id), {class: 'nav-link'}
+        %li.nav-item
+          =link_to new_offer_path, {class: 'nav-link'} do
+            %span.bold
+              +
+            Propose an offer
     %div.my-4.my-lg-0.inline-flex
       - if user_signed_in?
         .connexion-info
-          = "Welcome " + current_user.username
+          = "Welcome #{current_user.username} !"
         = link_to current_user do
           %i.fas.fa-user
         = link_to '/users/sign_out', method: :delete do
           %i.fas.fa-sign-out-alt
       - else
-        = link_to 'Login', '/users/sign_in', class: "btn btn-outline-success my-2 my-sm-0"
-        = link_to 'Register', '/users/sign_up', class: "btn btn-outline-success my-2 my-sm-0"
+        = link_to 'Login', '/users/sign_in', class: "btn btn-outline-purple my-2 my-sm-0"
+        = link_to 'Register', '/users/sign_up', class: "btn btn-outline-purple my-2 my-sm-0"

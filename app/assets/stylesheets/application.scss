@@ -5,4 +5,25 @@
 @import "bootstrap";
 @import "feedback";
 @import "../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "navbar";
 
+.bold {
+  font-weight: bold;
+}
+
+.inline-flex {
+  display: flex;
+  >* {
+    margin-left: 10px;
+  }
+}
+
+.btn-outline-purple {
+  color: #571845;
+  border: #571845 solid 1px;
+}
+.btn-outline-purple:hover {
+  color: #FFFFFF;
+  background: #571845;
+  text-decoration: none;
+}

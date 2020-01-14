@@ -1,0 +1,15 @@
+.mynavbar {
+  background: none;
+  color: #571845;
+  padding-left: 50px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2);
+  a {
+    color: #571845;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .nav-item {
+    margin: 0 10px;
+  }
+}
