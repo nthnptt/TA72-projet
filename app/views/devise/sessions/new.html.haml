@@ -4,7 +4,7 @@
     .field
       = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: :mail
     .field
-      = f.password_field :password, autocomplete: "current-password", placeholder: "Password (6 characters min.)"
+      = f.password_field :password, autocomplete: "current-password", placeholder: "Password"
     - if devise_mapping.rememberable?
       .field
         %p

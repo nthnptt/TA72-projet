@@ -7,7 +7,7 @@ const placesAutocomplete = places({
         value: function (suggestion) {
             return suggestion.name
         }
-    }
+    },
 });
 placesAutocomplete.configure({
     type: "address",
