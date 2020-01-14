@@ -1,0 +1,27 @@
+- if current_user == @offer.user
+  = link_to 'Edit', edit_offer_path(@offer)
+  = link_to 'Remove', @offer, method: :delete
+
+= link_to 'Profile', @offer.user
+
+= link_to 'Propose', offer_proposition_index_url(@offer), method: :post
+= link_to 'Propositions', offer_proposition_index_url(@offer)
+
+%table.table
+  %thead
+    %tr
+      %th{ scope: :col } Title
+      %th{ scope: :col } Description
+      %th{ scope: :col } Price
+  %tbody
+    %tr
+      %td
+        =@offer.title
+        - if current_user == @offer.user
+          = "*"
+      %td= @offer.description
+      %td= @offer.price
+
+- @offer.images.each do |i|
+  = image_tag i
+

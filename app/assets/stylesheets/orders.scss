@@ -43,3 +43,18 @@ orders-list {
 .order-filter {
   text-align: right;
 }
+
+.orders-img-container {
+  height: 40vh;
+
+}
+.focus-img {
+  height: 40vh;
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+
+}
+.solder-info {
+  line-height: 5px;
+}

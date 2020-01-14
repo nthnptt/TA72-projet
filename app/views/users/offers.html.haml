@@ -1,18 +1,25 @@
-%td= link_to 'Create', new_offer_path
-%table.table
-  %thead
-    %tr
-      %th{:scope => "col"} Title
-      %th{:scope => "col"} Description
-      %th{:scope => "col"} Price
-      %th{:scope => "col"} Action
-  %tbody
-    - @user.offers.each do |offer|
-      %tr
-        %td
-          =offer.title
-          - if current_user == offer.user
-            = "*"
-        %td= offer.description
-        %td= offer.price
-        %td= link_to 'Show', offer
+.container
+  .row
+    .orders-list.col-8
+      - @user.offers.each do |offer|
+        .order-card
+          - if offer.images.empty?
+            .order-mainpicture{style: "background-image: url(https://via.placeholder.com/300x200/20)"}
+          - else
+            .order-mainpicture{style: "background-image: url(#{url_for(offer.images[0])});"}
+          .order-information
+            .title
+              %h2
+                =offer.title
+              %h4
+                #{offer.price} €
+            .subinfo
+              %div
+                #{offer.user.city}
+              %div
+                todo category
+            .show
+              %td= link_to 'Show', offer
+    .order-filter.col-4
+      %h1
+        Filter
