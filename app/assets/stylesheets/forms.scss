@@ -34,7 +34,7 @@
     }
   }
 
-  input {
+  input, textarea{
     width: 100%;
     border-radius: 20px;
     box-shadow: none;
@@ -51,7 +51,7 @@
 
   input[type="submit"], input[Type="button"] {
     margin: auto;
-    width: 30%;
+    width: inherit;
     display: block;
     text-align: center;
     padding: 2px 7px;
