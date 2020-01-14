@@ -1,0 +1,45 @@
+orders-list {
+  display: flex;
+  flex-direction: row;
+  background: #B00100;
+}
+.order-card {
+  background: white;
+  height: 150px;
+  display: flex;
+  margin-bottom: 10px;
+  .show {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+  .order-mainpicture {
+    height: 100%;
+    width: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+  .order-information {
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    position: relative;
+
+    h1 {
+      margin: 0;
+    }
+    h4 {
+      font-size: 1.2em;
+    }
+    .subinfo {
+      font-size: 0.8em;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+}
+.order-filter {
+  text-align: right;
+}

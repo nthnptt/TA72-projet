@@ -8,6 +8,7 @@
 @import "font";
 @import "navbar";
 @import "forms";
+@import "orders";
 
 .bold {
   font-weight: bold;
@@ -32,7 +33,9 @@
   text-decoration: none;
 }
 body {
+  font-family: Muli, serif;
   padding-top: 56px;
+  background: #F7F7F7;
   min-height: 100vh;
 }
 
