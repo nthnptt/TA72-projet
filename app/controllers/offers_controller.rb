@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 class OffersController < ApplicationController
   def index
-    @offers = Offer.all
+    @offers = Offer.eager_load(:user).with_attached_images
+#    @offers = Offer.eager_load(:user).with_attached_images.ransack(params[:q])
   end
 
   def show

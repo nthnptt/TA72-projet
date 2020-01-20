@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def show
-    @user = User.find params[:id]
+    @user = User.eager_load(comments: [:commenter]).with_attached_avatar.find params[:id]
   end
 
   def like
@@ -29,6 +31,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def inject_count
     @count_like = @user.get_likes.count
     @count_dislike = @user.get_dislikes.count
