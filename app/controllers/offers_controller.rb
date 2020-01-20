@@ -2,8 +2,9 @@
 
 class OffersController < ApplicationController
   def index
-    @offers = Offer.eager_load(:user).with_attached_images
-#    @offers = Offer.eager_load(:user).with_attached_images.ransack(params[:q])
+    #@offers = Offer.eager_load(:user).with_attached_images
+    @q = Offer.eager_load(:user, :category).with_attached_images.ransack(params[:q])
+    @offers = @q.result(distinct: true)
   end
 
   def show

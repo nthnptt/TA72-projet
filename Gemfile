@@ -24,7 +24,8 @@ gem 'acts_as_votable'
 gem 'jbuilder', '~> 2.7'
 # Manage authentification
 gem 'devise'
-
+#filter
+gem 'ransack'
 # Styles librairies
 gem 'bootstrap', '~> 4.0.0'
 gem 'font-awesome-rails'

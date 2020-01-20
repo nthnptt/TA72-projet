@@ -130,3 +130,14 @@
     font-weight: lighter;
   }
 }
+
+.myformfilter {
+  input, select {
+    width: 50%;
+    float: right;
+    margin-left: 10px;
+  }
+  label {
+    margin-right: 10px;
+  }
+}

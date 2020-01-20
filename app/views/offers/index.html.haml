@@ -17,9 +17,15 @@
               %div
                 #{offer.user.city}
               %div
-                todo category
+                - if not offer.category.nil?
+                  =offer.category.name
             .show
               %td= link_to 'Show', offer
     .order-filter.col-4
       %h1
         Filter
+      = search_form_for @q, class: 'myform myformfilter' do |f|
+        = f.search_field :title_has_every_term, placeholder: 'title'
+        = f.select :category_id_eq, options_from_collection_for_select(Category.order_by_name,:id, :name, @q.category_id_eq), { include_blank: true }, { placeholder: 'Status' }
+        %div
+          = f.submit 'search'
