@@ -18,6 +18,7 @@ class OffersController < ApplicationController
 
   def new
     @offer = Offer.new
+    @categories = Category.order_by_name
   end
 
   def create
@@ -44,6 +45,6 @@ class OffersController < ApplicationController
   end
 
   def offers_params
-    params.require(:offer).permit(:title, :description, :price, images: [])
+    params.require(:offer).permit(:category_id ,:title, :description, :price, images: [])
   end
 end

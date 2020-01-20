@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def offers
-    @user = User.find params[:id]
+    @user = User.eager_load(:offers).merge(Offer.with_attached_images).find params[:id]
   end
 
   private
