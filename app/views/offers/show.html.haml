@@ -1,11 +1,3 @@
-- if current_user != @offer.user
-  = link_to 'Edit', edit_offer_path(@offer)
-  = link_to 'Remove', @offer, method: :delete
-
-  = link_to 'Profile', @offer.user
-
-  = link_to 'Propose', offer_proposition_index_url(@offer), method: :post
-  = link_to 'Propositions', offer_proposition_index_url(@offer)
 .container
   .row
     .col-8
@@ -24,6 +16,14 @@
         %span.bold
           = link_to @offer.user.username, @offer.user, class: 'links'
       %p
-        todo étoile
+        %i.fas.fa-star
+        =@offer.user.rate
       %p
-        todo make a proposition ?
+        Phone :
+        = @offer.user.phone_number
+        %i.fas.fa-clipboard.click-to-clipboard{data_clip: @offer.user.phone_number}
+      %p
+        Mail :
+        = @offer.user.email
+        %i.fas.fa-clipboard.click-to-clipboard{data_clip: @offer.user.email}
+= javascript_pack_tag 'clipboard'

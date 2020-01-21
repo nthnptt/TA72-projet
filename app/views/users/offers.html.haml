@@ -20,6 +20,8 @@
                 todo category
             .show
               %td= link_to 'Show', offer
+              %td= link_to 'Edit', edit_offer_path(offer)
+              %td= link_to 'Remove', offer, method: :delete
     .order-filter.col-4
       %h1
         Filter

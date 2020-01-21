@@ -33,6 +33,7 @@ class OffersController < ApplicationController
   end
 
   def edit
+    @categories = Category.order_by_name
     @offer = Offer.find params[:id]
   end
 

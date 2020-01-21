@@ -9,6 +9,7 @@
     "@rails/webpacker": "^4.0.7",
     "jquery": "^3.4.1",
     "places.js": "^1.17.1",
+    "rater-js": "^1.0.1",
     "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
