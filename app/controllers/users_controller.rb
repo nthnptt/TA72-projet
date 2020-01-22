@@ -3,6 +3,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.eager_load(comments: [:commenter]).with_attached_avatar.find params[:id]
+    @comment = Comment.find_by commenter_id: current_user, commented_id: params[:id]
   end
 
   def like

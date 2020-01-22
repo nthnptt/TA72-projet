@@ -1,9 +1,11 @@
 class RaterInput {
     constructor(idName, inputIdName) {
         this.rate = 0;
-        this.rateHover = 0;
         this.$input = document.querySelector('#' + inputIdName);
         this.$element = document.querySelector('#' + idName);
+        if(this.$element.dataset.lastrate) {
+            this.changeRate(this.$element.dataset.lastrate)
+        }
         this.render()
     }
 

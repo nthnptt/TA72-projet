@@ -40,15 +40,27 @@
           .click-to-clipboard{data: {clip: @user.phone_number}}
             %i.fas.fa-clipboard
       .comment-form
-      %h2 Add comment:
-      = form_for [@user, Comment.new ], html: {class: "myform"} do |f|
-        =f.hidden_field :commented_id, value: @user.id
-        = f.text_area :body
-        #rater-input
-        =f.hidden_field :rate, id: 'rater-hidden', value: 0
-        %p
-          = f.submit "Send"
+      - if @user != current_user
+        - if @comment
+          %h2 Update comment
+          = form_for [@user, @comment ], html: {class: "myform"} do |f|
+            =f.hidden_field :commented_id, value: @user.id
+            = f.text_area :body
+            #rater-input{data: {lastrate: @comment.rate}}
+            =f.hidden_field :rate, id: 'rater-hidden', value: 0
+            %p
+            = f.submit "Send"
+        - else
+          %h2 Add comment:
+          = form_for [@user, Comment.new ], html: {class: "myform"} do |f|
+            =f.hidden_field :commented_id, value: @user.id
+            = f.text_area :body
+            #rater-input
+            =f.hidden_field :rate, id: 'rater-hidden', value: 0
+            %p
+              = f.submit "Send"
 
+=@comment
 = javascript_pack_tag 'rater'
 = javascript_pack_tag 'rater-input'
 = javascript_pack_tag 'clipboard'
