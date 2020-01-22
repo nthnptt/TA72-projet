@@ -24,6 +24,8 @@
             .rater{data: {rate: comment.rate}}
     .col-4
       .about
+        - if @user == current_user
+          =link_to 'edit profile', '/users/edit', class: "btn-edit"
         .user-information-line
           .rater{data: {rate: @user.rate}}
           Mail :

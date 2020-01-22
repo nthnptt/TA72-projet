@@ -13,7 +13,12 @@
 .myform {
   color: #571845;
   font-family: Muli, serif;
-
+  .separator {
+    width: 100%;
+    height: 1px;
+    border-bottom: #571845 1px solid;
+    margin: 10px 0;
+  }
   .ap-input {
     height: inherit;
   }
