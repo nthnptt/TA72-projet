@@ -9,8 +9,9 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     =render 'layouts/navbar'
-    %p.notice
+    %p.notice.alter.alert-primary
       =notice
-    %p.alert
-      =alert
+    - if alert
+      %p.alert.alert-danger
+        =alert
     = yield
