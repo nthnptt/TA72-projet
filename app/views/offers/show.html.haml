@@ -15,15 +15,18 @@
         Sold by
         %span.bold
           = link_to @offer.user.username, @offer.user, class: 'links'
-      %p
+        %p
         .rater{data: {rate: @offer.user.rate}}
-      %p
+        .user-information-line
+          Mail :
+          = @offer.user.email
+          .click-to-clipboard{data: {clip: @offer.user.email}}
+            %i.fas.fa-clipboard
+      .user-information-line
         Phone :
         = @offer.user.phone_number
-        %i.fas.fa-clipboard.click-to-clipboard{data_clip: @offer.user.phone_number}
-      %p
-        Mail :
-        = @offer.user.email
-        %i.fas.fa-clipboard.click-to-clipboard{data_clip: @offer.user.email}
+        .click-to-clipboard{data: {clip: @offer.user.phone_number}}
+          %i.fas.fa-clipboard
+
 = javascript_pack_tag 'clipboard'
 = javascript_pack_tag 'rater'

@@ -56,7 +56,9 @@ body {
     color: #571845;
   }
 }
+
 .click-to-clipboard {
+  display: inline-block;
   font-size: 12px;
   &:hover {
     text-decoration: underline;

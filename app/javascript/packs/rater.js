@@ -9,7 +9,7 @@ function create_rater(className) {
         let html = ""
         for (let k = 1; k < 6; k++) {
             if (k <= rate) {
-                html += goodStar
+            html += goodStar
             } else {
                 if (k - rate < 1 && rate % (k-1) >= 0.5)
                     html += halfStar

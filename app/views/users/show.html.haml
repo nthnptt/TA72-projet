@@ -24,18 +24,19 @@
             .rater{data: {rate: comment.rate}}
     .col-4
       .about
-        %p
+        .user-information-line
           .rater{data: {rate: @user.rate}}
-        %p
           Mail :
           %a{ href: "mailto:#{@user.email}" }
             #{@user.email}
-          %i.fas.fa-clipboard.click-to-clipboard{data_clip: @user.email}
-        %p
+          .click-to-clipboard{data: {clip: @user.email}}
+            %i.fas.fa-clipboard
+        .user-information-line
           Phone :
           %a{ href: "tel:#{@user.phone_number}" }
             #{@user.phone_number}
-          %i.fas.fa-clipboard.click-to-clipboard{data_clip: @user.phone_number}
+          .click-to-clipboard{data: {clip: @user.phone_number}}
+            %i.fas.fa-clipboard
       .comment-form
       %h2 Add comment:
       = form_for [@user, Comment.new ], html: {class: "myform"} do |f|
@@ -48,3 +49,4 @@
 
 = javascript_pack_tag 'rater'
 = javascript_pack_tag 'rater-input'
+= javascript_pack_tag 'clipboard'
