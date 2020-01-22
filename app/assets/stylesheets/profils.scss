@@ -1,0 +1,40 @@
+.comments {
+  .comment {
+    border: #571845 solid 1px;
+    border-radius: 5px;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+  }
+  .c-header {
+    margin-bottom: 5px;
+    .commenter {
+      font-size: 22px;
+      font-weight: bold;
+      display: inline-block
+    }
+    .comment-date {
+      font-size: 12px;
+      font-weight: lighter;
+      float: right;
+    }
+    .rate {
+      font-size: 14px;
+      .fas {
+        font-size: 12px;
+      }
+    }
+  }
+
+}
+
+.comment-form {
+  margin-top: 50px;
+  .myform {
+    input, textarea {
+      margin-bottom: 5px;
+    }
+  }
+}
+.about {
+  border-bottom: #571845 solid 1px;
+}

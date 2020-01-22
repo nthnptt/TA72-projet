@@ -17,7 +17,9 @@ class User < ApplicationRecord
   validates_presence_of :username, :phone_number, :city, :city_code
 
   def rate
-    comments.sum(&:rate)
+    result=0
+    result=comments.sum(&:rate)/comments.length if comments.length>0
+    result.round(2)
   end
 
   private

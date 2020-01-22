@@ -16,8 +16,7 @@
         %span.bold
           = link_to @offer.user.username, @offer.user, class: 'links'
       %p
-        %i.fas.fa-star
-        =@offer.user.rate
+        .rater{data: {rate: @offer.user.rate}}
       %p
         Phone :
         = @offer.user.phone_number
@@ -27,3 +26,4 @@
         = @offer.user.email
         %i.fas.fa-clipboard.click-to-clipboard{data_clip: @offer.user.email}
 = javascript_pack_tag 'clipboard'
+= javascript_pack_tag 'rater'
